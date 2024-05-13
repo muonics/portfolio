@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
+        /* CSS Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -44,6 +45,10 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        /* Additional CSS for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -92,5 +97,17 @@
     <footer>
         <p>&copy; 2024 My Portfolio</p>
     </footer>
+    <script>
+        // JavaScript for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
